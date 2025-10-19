@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import Button from '@/components/Buttons';
+import Button from '@/src/components/Buttons';
 import { StatusBar } from 'expo-status-bar';
-import { Styles } from "@/styles/GlobalStyles";
-import { TouchableOpacity } from 'react-native';
-import { colorsPallette } from '@/styles/Colors';
-import { ThemeContext } from '@/context/themeContext';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import { StyleSheet, Switch, View, Text } from "react-native";
+import { Styles } from "@/src/styles/GlobalStyles";
+import { colorsPallette } from '@/src/styles/Colors';
+import { ThemeContext } from '@/src/context/themeContext';
+import { View, Text } from "react-native";
+import ThemeToggle from '@/src/components/ThemeToggle';
 
 
 export default function Index() {
@@ -157,13 +156,7 @@ export default function Index() {
 
             <View style={Styles.iconContainer}>
               <View style={{ marginBottom: 20, alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-                  <Icon
-                    name={theme === 'light' ? 'sun' : 'moon'}
-                    size={30}
-                    color={theme === 'light' ? 'orange' : 'white'}
-                  />
-                </TouchableOpacity>
+                <ThemeToggle onToggle={() => setTheme(theme === 'light' ? 'dark' : 'light')} theme={theme}/>
               </View>
             </View>          
 

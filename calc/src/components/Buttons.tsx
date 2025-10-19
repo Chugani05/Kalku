@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Styles } from "@/styles/GlobalStyles";
-import { colorsPallette } from "@/styles/Colors";
-import { ThemeContext } from "@/context/themeContext";
+import { Styles } from "@/src/styles/GlobalStyles";
+import { colorsPallette } from "@/src/styles/Colors";
+import { ThemeContext } from "@/src/context/themeContext";
 import { TouchableOpacity, Text, StyleSheet, useColorScheme } from "react-native";
 
 interface ButtonProps {
