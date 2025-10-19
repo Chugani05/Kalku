@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { Styles } from "@/src/styles/GlobalStyles";
 import { colorsPallette } from "@/src/styles/Colors";
 import { ThemeContext } from "@/src/context/themeContext";
-import { TouchableOpacity, Text, StyleSheet, useColorScheme } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 interface ButtonProps {
     label: string;
-    type?: "num" | "op" | "equal" | "clear" | "result";
+    type: string;
     onPress?: () => void;
 }
 
@@ -23,8 +23,6 @@ const Button: React.FC<ButtonProps> = ({ label, type, onPress }) => {
             return theme === "light" ? colorsPallette.equalLight : colorsPallette.equalDark;
         case "clear":
             return theme === "light" ? colorsPallette.clearLight : colorsPallette.clearDark;
-        case "result":
-            return theme === "light" ? colorsPallette.resultLight : colorsPallette.resultDark;
         default:
             return theme === "light" ? colorsPallette.bgLight : colorsPallette.bgDark;
       }
@@ -34,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({ label, type, onPress }) => {
 
     return (
         <TouchableOpacity style={[Styles.btn, { backgroundColor: getBackgroundColor(type) }]} onPress={onPress}>
-            <Text style={[Styles.label, { color: textColor }]}>{label}</Text>
+            <Text style={type === "num" ? Styles.label: [Styles.label, { color: textColor }]}>{label}</Text>
         </TouchableOpacity>
     );
 };
