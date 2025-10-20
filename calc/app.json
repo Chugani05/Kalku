@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "calc",
-    "slug": "calc",
+    "name": "kalku",
+    "slug": "kalku",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "calc",
+    "scheme": "kalku",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
